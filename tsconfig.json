@@ -1,0 +1,42 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./src/app",
+    "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "strictNullChecks": false,
+    "target": "es2015",
+    "module": "es2020",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "@modules/*": [ "modules/*" ],
+      "@components/*": [ "shared/components/*" ],
+      "@dyn-forms/*": [ "shared/dynamic-form-elements/*" ],
+      "@services/*": [ "shared/services/*" ],
+      "@interfaces/*": [ "shared/interfaces/*" ],
+      "@pipes/*": [ "shared/pipes/*" ],
+      "@utils/*": [ "shared/utils/*" ],
+      "@data/*": [ "data/*" ],
+      "@imgs/*": ["assets/imgs/*"]
+    }
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+}

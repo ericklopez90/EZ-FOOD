@@ -1,0 +1,12 @@
+.img-mini{
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    max-height: 150px;
+    max-width: 110px;
+}
+
+.badge-dark{
+    background-color: black;
+}
