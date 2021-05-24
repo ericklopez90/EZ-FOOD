@@ -14,7 +14,6 @@ export class ButtonsComponent  {
   sendKitchen():void {
 
     Swal.fire({
-      position: 'top-end',
       icon: 'success',
       title: '¡Gracias!',
       html: 
