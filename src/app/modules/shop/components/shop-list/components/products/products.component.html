@@ -1,25 +1,35 @@
 <div class="row">
-    <div class="col-lg-9 order-lg-2">
-      <div class="product-card product-list mb-30"><a class="product-thumb" href="/shop/single">
-          <img src="assets/img/shop/products/postre1.png" alt="Product" class="imagen-produc"></a>
-        <div class="product-card-inner">
-          <div class="product-card-body">
-            <div class="product-category"></div>
-            <span class="product-title"><a href="/single">Brownie de chocolate</a></span>
-            <div class="product-category"><a href="#"> Dulce de azúcar sin harina, postre de pastel de chocolate, azúcar
-                moreno empacado, comida, horneando</a></div>
-            <span class="product-price mt-4">
-              $174.00
-            </span>
-            <p class="text-sm text-muted hidden-xs-down my-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis.</p>
+  <div class="col-lg-9 order-lg-2">
+    <div class="product-card product-list mb-30">
+      <a class="product-thumb" [routerLink]="['/shop/single']">
+        <img [src]="product.image" [alt]="product.name" class="imagen-produc">
+      </a>
+      <div class="product-card-inner">
+        <div class="product-card-body">
+          <div class="product-category"></div>
+          <span class="product-title">
+            <a [routerLink]="['/shop/single']">
+              {{ product.name }}
+            </a>
+          </span>
+          <div class="product-category">
+            <a class="text-decoration-none text-secondary">
+              {{ product.description }}
+            </a>
           </div>
-          <div class="product-button-group"><a class="product-button" href="#" data-toast data-toast-type="success"
-              data-toast-position="topRight" data-toast-icon="icon-check-circle" data-toast-title="Product"
-              data-toast-message="successfuly added to cart!">
-              <i class="icon-shopping-cart"></i>
-              <span>AGREGAR A LA ORDEN</span></a></div>
+          <span class="product-price mt-4">
+            {{ product.price | currency}}
+          </span>
+        </div>
+        <div class="product-button-group" (click)="addToOrder( product )">
+          <a class="product-button">
+            <i class="icon-shopping-cart"></i>
+            <span>
+              AGREGAR A LA ORDEN
+            </span>
+          </a>
         </div>
       </div>
     </div>
   </div>
+</div>

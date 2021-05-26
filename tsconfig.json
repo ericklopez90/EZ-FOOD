@@ -30,7 +30,8 @@
       "@pipes/*": [ "shared/pipes/*" ],
       "@utils/*": [ "shared/utils/*" ],
       "@data/*": [ "data/*" ],
-      "@imgs/*": ["assets/imgs/*"]
+      "@imgs/*": ["assets/imgs/*"],
+      "@inner-store/*": ["shared/store/*"]
     }
   },
   "angularCompilerOptions": {

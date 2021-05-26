@@ -4,26 +4,45 @@
       <div class="card-body p-2 d-table w-100">
         <div class="row">
           <div class="col-4 ">
-            <div class="d-table-cell align-middle"><img class="img-mini" src="assets/img/shop/products/postre1.png"
-                alt="Image"></div>
+            <div class="d-table-cell align-middle">
+              <img class="img-mini" [src]="ordered.product.image" [alt]="ordered.product.image">
+            </div>
           </div>
           <div class="col-8">
-            <p class="fs-8 fw-bold6 m-0">Brownie de chocolate</p>
-            <p class="fs-8 fw-bold6">Sin: <span class="fs-8 fw-bold1">Leche evaporada, canela</span></p>
+            <p class="fs-8 fw-bold6 m-0">
+              {{ ordered.product.name }}
+            </p>
+            <p class="fs-8 fw-bold6" *ngIf="withOutIngredients() !== ''">
+              Sin:
+              <span class="fs-8 fw-bold1">
+                {{ withOutIngredients() }}
+              </span>
+            </p>
           </div>
         </div>
         <div class="row">
           <div class="col-4">
-            <span class=" badge badge-dark fs-9">Enviado a cocina</span>
+            <span class=" badge badge-dark fs-10">
+              {{ getStatus() }}
+            </span>
           </div>
-          <div class="col-8">
-            <p class="fs-8 fw-bold6 m-0">Instrucciones</p>
-            <span class="fs-8 fw-bold1">Agregar fresas y pedazos de manzana </span>
+          <div class="col-8"  *ngIf="ordered.instructions && ordered.instructions !== ''" >
+            <p class="fs-8 fw-bold6 m-0">
+              Instrucciones
+            </p>
+            <span class="fs-8 fw-bold1">
+              {{ ordered.instructions }}
+            </span>
+          </div>
+          <div class="col-8"  *ngIf="!ordered.instructions || ordered.instructions === ''" >
+            <span class="fs-9">
+              {{ ordered.product.description }}
+            </span>
           </div>
         </div>
         <div class="row mt-1">
           <div class="col-2 mt-1">
-            <button type="button" class="btn btn-outline-danger btn-sm mx-1">
+            <button type="button" class="btn btn-outline-danger btn-sm mx-1" (click)="deleteProduct()">
               <i class="fas fa-trash-alt"></i>
             </button>
           </div>
@@ -33,12 +52,19 @@
             </button>
           </div>
           <div class="col-8 text-right fw-bold6 mt-3">
-            <span>$174.00</span>
+            <span>
+              {{ ordered.product.price | currency}}
+            </span>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <div class="col-12">
+    <div class="bg-secondary p-1 text-center fs-10">
+      Pedido por <b>{{ ordered.customer }}</b> hace {{ getAgo( ordered.addedAt ) }}
+    </div>
+  </div>
 </div>
 
-<hr class="my-1">
+<hr class="my-3">

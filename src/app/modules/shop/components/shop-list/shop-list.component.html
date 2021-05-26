@@ -17,6 +17,9 @@
 <!-- Page Content-->
 <div class="container">
 
-  <products></products>
+  <products
+    *ngFor="let product of products"
+    [product]="product">
+  </products>
 
 </div>
