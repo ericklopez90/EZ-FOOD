@@ -9,6 +9,7 @@ import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { TextAreaComponent } from './components/text-area/text-area.component';
 import { ButtonsComponent } from './components/buttons/buttons.component';
 import { TextComponent } from './components/text/text.component';
+import { ShortcutModule } from '@components/shortcut/shortcut.module';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { TextComponent } from './components/text/text.component';
     CommonModule,
     SingleRoutingModule,
     NavigatorModule,
+    ShortcutModule
     
   ]
 })

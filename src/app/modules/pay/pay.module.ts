@@ -12,6 +12,7 @@ import { PerPersonComponent } from './components/per-person/per-person.component
 import { PaymentMethodComponent } from './components/payment-method/payment-method.component';
 import { ButtonsComponent } from './components/buttons/buttons.component';
 import { SplitAccountComponent } from './components/split-account/split-account.component';
+import { ShortcutModule } from '@components/shortcut/shortcut.module';
 
 
 
@@ -25,11 +26,12 @@ import { SplitAccountComponent } from './components/split-account/split-account.
     PerPersonComponent,
     PaymentMethodComponent,
     ButtonsComponent,
-    SplitAccountComponent
+    SplitAccountComponent,
   ],
   imports: [
     CommonModule,
     PayRoutingModule,
+    ShortcutModule
   ]
 })
 export class PayModule { }

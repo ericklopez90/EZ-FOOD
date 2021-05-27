@@ -2,19 +2,9 @@
 <div class="page-title">
   <div class="container">
     <div class="column">
-      <span class="fs-3 font-weight-light">Pagar</span>
+      <span class="fs-3 font-weight-light">{{breadcrumbs[breadcrumbs.length -1].name}}</span>
     </div>
-    <div class="column">
-      <ul class="breadcrumbs">
-        <li><a href="">Inicio</a>
-        </li>
-        <li class="separator">&nbsp;</li>
-        <li><a href="/order">Orden</a>
-        </li>
-        <li class="separator">&nbsp;</li>
-        <li>Pagar</li>
-      </ul>
-    </div>
+    <shortcut [breadcrumbs]="breadcrumbs"></shortcut>
   </div>
 </div>
 

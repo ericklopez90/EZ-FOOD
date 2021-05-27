@@ -1,18 +1,17 @@
-<div class="page-title">
-  <div class="container">
-    <div class="column">
-      <span class="fs-3">Orden</span>
-    </div>
-    <div class="column">
-      <ul class="breadcrumbs">
-        <li><a href="">Inicio</a>
-        </li>
-        <li class="separator">&nbsp;</li>
-        <li><a href="/order">Orden</a>
-        </li>
-        <li class="separator">&nbsp;</li>
-        <li>Pagar</li>
-      </ul>
-    </div>
-  </div>
+<div class="column">
+  <ul class="breadcrumbs">
+    <li>
+      <a [routerLink]="['/']">
+        Inicio
+      </a>
+    </li>
+    <ng-container *ngFor=" let breadcrumb of breadcrumbs">
+      <li class="separator">&nbsp;</li>
+      <li>
+        <a [routerLink]="[breadcrumb.url]" class="text-decoration-none">
+          {{breadcrumb.name}}
+        </a>
+      </li>
+    </ng-container>
+  </ul>
 </div>

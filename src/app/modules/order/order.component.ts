@@ -3,7 +3,7 @@ import { AppState } from '@inner-store/app.reducers';
 import { ProductInOrder } from '@interfaces/product-in-order.interface';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-
+import { Breadcrumb } from '@interfaces/breadcrumb.interface'
 
 @Component({
   selector: 'app-order',
@@ -14,6 +14,13 @@ export class OrderComponent implements OnInit, OnDestroy {
 
   products: ProductInOrder[] = [];
   subs: Subscription[] = [];
+  breadcrumbs: Breadcrumb[] = [
+  {
+    name:'Orden',
+    url:'/order',
+  },
+];
+
   constructor(
     private store: Store<AppState>
   ) { }

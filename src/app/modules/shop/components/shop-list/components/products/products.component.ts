@@ -13,7 +13,6 @@ import { Subscription } from 'rxjs';
 })
 export class ProductsComponent implements OnInit, OnDestroy {
 
-  products: Product[] = [];
   productsInOrder: ProductInOrder[];
   subs: Subscription;
   @Input() product: Product;

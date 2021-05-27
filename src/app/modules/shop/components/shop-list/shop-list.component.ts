@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '@interfaces/product.interface';
+import { Breadcrumb } from '@interfaces/breadcrumb.interface';
 
 @Component({
   selector: 'app-shop-list',
@@ -34,6 +35,14 @@ export class ShopListComponent implements OnInit {
       ]
     }
   ];
+
+  breadcrumbs: Breadcrumb[] = [
+    {
+      name:'Postres',
+      url:'/shop',
+    },
+  ];
+
   constructor() { }
 
   ngOnInit(): void {

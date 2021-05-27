@@ -18,7 +18,6 @@ const storeDevTools: StoreDevtoolsOptions = {
 @NgModule({
   declarations: [
     AppComponent,
-    ShortcutComponent
   ],
   imports: [
     BrowserModule,
