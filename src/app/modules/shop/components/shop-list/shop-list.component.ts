@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Product } from '@interfaces/product.interface';
 import { Breadcrumb } from '@interfaces/breadcrumb.interface';
 
@@ -9,7 +9,7 @@ import { Breadcrumb } from '@interfaces/breadcrumb.interface';
 })
 export class ShopListComponent implements OnInit {
 
-  products: Product[] = [
+  @Input() products: Product[] = [
     {
       name: 'Browie de chocolate',
       price: 174,
@@ -43,7 +43,7 @@ export class ShopListComponent implements OnInit {
     },
   ];
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
   }

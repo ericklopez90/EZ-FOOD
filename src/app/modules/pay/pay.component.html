@@ -10,9 +10,22 @@
 
 <div class="container">
 
-  <split-account></split-account>
+  <div class="row mx-0">
+    <div class="col-2 text-right mt-2">
+      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+    </div>
+    <div class="col-10">
+      <span class="fs-5">
+        ¿Dividir Cuenta?
+      </span>
+    </div>
+  </div>
+  <hr class="my-2">
 
-  <products></products>
+  <ng-container *ngFor="let order of orders">
+    <products class="row" [order]="order"></products>
+    <hr class="my-2">
+  </ng-container>
 
   <gratuity></gratuity>
 

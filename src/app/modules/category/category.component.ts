@@ -15,8 +15,8 @@ export class CategoryComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  goCategory(): void {
-    this.router.navigateByUrl('shop');
+  goCategory( category: string ): void {
+    this.router.navigateByUrl(`shop/${category}`);
   }
 
 }

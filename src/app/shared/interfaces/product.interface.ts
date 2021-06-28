@@ -5,5 +5,7 @@ export interface Product {
   image: string;
   price: number;
   description: string;
-  ingredients: Ingredient[]
+  ingredients: Ingredient[];
+  category?: string;
+  id?: string | number;
 }

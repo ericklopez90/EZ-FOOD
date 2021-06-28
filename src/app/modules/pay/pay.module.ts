@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { PayRoutingModule } from './pay-routing.module';
 import { PayComponent } from './pay.component';
 
-import { ProductsComponent } from './components/products/products.component';
+import { PayProductsComponent } from './components/products/products.component';
 import { GratuityComponent } from './components/gratuity/gratuity.component';
 import { IVAComponent } from './components/iva/iva.component';
 import { TotalComponent } from './components/total/total.component';
@@ -19,7 +19,7 @@ import { ShortcutModule } from '@components/shortcut/shortcut.module';
 @NgModule({
   declarations: [
     PayComponent,
-    ProductsComponent,
+    PayProductsComponent,
     GratuityComponent,
     IVAComponent,
     TotalComponent,

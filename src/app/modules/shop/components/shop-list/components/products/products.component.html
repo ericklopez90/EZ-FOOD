@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-lg-9 order-lg-2">
     <div class="product-card product-list mb-30">
-      <a class="product-thumb" [routerLink]="['/shop/single']">
+      <a class="product-thumb" [routerLink]="['/shop/' + product.category +'/single']">
         <img [src]="product.image" [alt]="product.name" class="imagen-produc">
       </a>
       <div class="product-card-inner">

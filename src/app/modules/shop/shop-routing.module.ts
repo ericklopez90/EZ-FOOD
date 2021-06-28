@@ -5,24 +5,21 @@ import { ShopComponent } from './shop.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'list',
-    pathMatch: 'full'
-  },
-  {
-    path: '',
     component: ShopComponent,
     children: [
-      {
-        path: 'list',
-        loadChildren: () => import('@modules/shop/components/shop-list/shop-list.module')
-          .then(m => m.ShopListModule)
-      },
-      {
-        path: 'single',
-        loadChildren: () => import('@modules/shop/components/single/single.module')
-          .then(m => m.SingleModule)
-      },
-]}]
+    ]
+  },
+  {
+    path: 'list',
+    loadChildren: () => import('@modules/shop/components/shop-list/shop-list.module')
+      .then(m => m.ShopListModule)
+  },
+  {
+    path: 'single',
+    loadChildren: () => import('@modules/shop/components/single/single.module')
+      .then(m => m.SingleModule)
+  },
+]
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

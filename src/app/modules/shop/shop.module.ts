@@ -3,15 +3,20 @@ import { CommonModule } from '@angular/common';
 
 import { ShopRoutingModule } from './shop-routing.module';
 import { ShopComponent } from './shop.component';
+import { ShortcutModule } from '@components/shortcut/shortcut.module';
+import { ProductsComponent } from './components/shop-list/components/products/products.component';
+
 
 
 @NgModule({
   declarations: [
-    ShopComponent
+    ShopComponent,
+    ProductsComponent
   ],
   imports: [
     CommonModule,
     ShopRoutingModule,
+    ShortcutModule
   ]
 })
 export class ShopModule { }
