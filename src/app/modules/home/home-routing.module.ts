@@ -23,9 +23,14 @@ const routes: Routes = [{
           .then(m => m.CategoryModule)
       },
       {
-        path: 'shop/:category',
-        loadChildren: () => import('@modules/shop/shop.module')
-          .then(m => m.ShopModule)
+        path: 'meal/:category',
+        loadChildren: () => import('@modules/meal/meal.module')
+          .then(m => m.MealModule)
+      },
+      {
+        path: 'meal/description/:id',
+        loadChildren: () => import('@modules/description/description.module')
+          .then(m => m.DescriptionModule)
       },
       {
         path: 'order',

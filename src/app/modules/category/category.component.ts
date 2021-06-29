@@ -16,7 +16,7 @@ export class CategoryComponent implements OnInit {
   }
 
   goCategory( category: string ): void {
-    this.router.navigateByUrl(`shop/${category}`);
+    this.router.navigateByUrl(`meal/${category}`);
   }
 
 }

@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from 'app-routing-module';
 
 import { AppComponent } from './app.component';
-import { ShortcutComponent } from './shared/components/shortcut/shortcut.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 import { StoreModule } from '@ngrx/store';
 import { appReducers } from '@inner-store/app.reducers';
 import { StoreDevtoolsModule, StoreDevtoolsOptions } from '@ngrx/store-devtools';
@@ -23,7 +23,9 @@ const storeDevTools: StoreDevtoolsOptions = {
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot( appReducers ),
-    StoreDevtoolsModule.instrument( storeDevTools )
+    StoreDevtoolsModule.instrument( storeDevTools ),
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
 
   ],
   providers: [],

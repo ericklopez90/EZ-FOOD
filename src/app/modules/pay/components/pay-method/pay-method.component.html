@@ -1,0 +1,123 @@
+<div class="row mx-0 mt-3">
+    <div class="col-7">
+      <select class="custom-select" id="inputGroupSelect01">
+        <option selected>Propina</option>
+        <option value="1">10%</option>
+        <option value="2">15%</option>
+        <option value="3">20%</option>
+      </select>
+    </div>
+    <div class="col-5 text-right">
+      <span>$30</span>
+    </div>
+  </div>
+  
+  <hr class="my-2">
+  
+  <div class="row mx-0 mt-3">
+    <div class="col-6">
+      <span>IVA</span>
+    </div>
+    <div class="col-6 text-right">
+      <span>$48</span>
+    </div>
+  </div>
+  <hr class="my-2">
+  
+  <div class="row mx-0 mt-3">
+    <div class="col-6">
+      <span>Total a pagar</span>
+    </div>
+    <div class="col-6 text-right">
+      <span>$64</span>
+    </div>
+  </div>
+  <hr class="my-2">
+  
+  <div class="row mx-0 mt-3">
+    <div class="col-6">
+      <p class="m-0">Total a pagar</p>
+      <span>-Betoño</span>
+    </div>
+    <div class="col-6 text-right">
+      <span>$189</span>
+    </div>
+  </div>
+  
+  
+  <div class="row">
+    <div class="col-8 offset-2 text-center">
+        <button type="button" class="btn btn-outline-primary w-100">Pagar</button>
+    </div>
+  </div>
+  
+  <div class="row my-3">
+    <div class="col-10 offset-1 text-center">
+  
+      <div id="accordion">
+        <div class="card">
+          <div class="card-header pay-card" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                aria-controls="collapseOne">
+                Efectivo
+              </button>
+            </h5>
+          </div>
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+              Su mesero se acercara con usted, se recomienda entregar la cantidad exacta
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header pay-card" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                aria-expanded="false" aria-controls="collapseTwo">
+                Tarjeta de credito/debito
+              </button>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-12">
+                  <input type="text" class="form-control my-3" placeholder="Nombre Completo" aria-label="Username"
+                    aria-describedby="basic-addon1">
+                  <input type="text" class="form-control my-3" placeholder="Número de tarjeta" aria-label="Username"
+                    aria-describedby="basic-addon1">
+                  <input type="text" class="form-control my-3" placeholder="MM/YY" aria-label="Username"
+                    aria-describedby="basic-addon1">
+                  <input type="text" class="form-control my-3" placeholder="CVC" aria-label="Username"
+                    aria-describedby="basic-addon1">
+                  <button type="button" class="btn btn-outline-primary">Pagar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header pay-card" id="headingThree">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+                aria-expanded="false" aria-controls="collapseThree">
+                Paypal
+              </button>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+              <input type="text" class="form-control my-3" placeholder="Email" aria-label="Username"
+                aria-describedby="basic-addon1">
+              <input type="text" class="form-control my-3" placeholder="Contraseña" aria-label="Username"
+                aria-describedby="basic-addon1">
+              <button type="button" class="btn btn-outline-primary">Iniciar sesión</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <hr class="my-2">

@@ -6,9 +6,6 @@ import { OrderComponent } from './order.component';
 import { ProductComponent } from './components/product/product.component';
 import { ShortcutModule } from '@components/shortcut/shortcut.module';
 
-
-
-
 @NgModule({
   declarations: [
     OrderComponent,

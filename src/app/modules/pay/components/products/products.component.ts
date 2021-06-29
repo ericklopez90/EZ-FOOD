@@ -6,12 +6,12 @@ import { ProductInOrder } from '@interfaces/product-in-order.interface';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
-export class PayProductsComponent implements OnInit {
+export class PayProductsComponent {
 
   @Input() order: ProductInOrder;
   constructor() { }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(){
+    }
 
 }

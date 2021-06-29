@@ -3,7 +3,8 @@ import { AppState } from '@inner-store/app.reducers';
 import { ProductInOrder } from '@interfaces/product-in-order.interface';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import { Breadcrumb } from '@interfaces/breadcrumb.interface'
+import { Breadcrumb } from '@interfaces/breadcrumb.interface';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-order',
@@ -22,7 +23,8 @@ export class OrderComponent implements OnInit, OnDestroy {
 ];
 
   constructor(
-    private store: Store<AppState>
+    private store: Store<AppState>,
+    private toastr: ToastrService
   ) { }
 
   ngOnDestroy(): void { this.subs.map( s => s.unsubscribe() ); }
@@ -48,6 +50,9 @@ export class OrderComponent implements OnInit, OnDestroy {
       0 ) || 0;
   }
 
+  showSuccess() {
+    this.toastr.success('Se ha enviado a cocina correctamente');
+  }
 
 }
 

@@ -34,5 +34,5 @@ export class PayComponent {
       ({ order }) => this.orders = order.productsInOrder
     )
   }
-
 }
+

@@ -5,14 +5,9 @@ import { PayRoutingModule } from './pay-routing.module';
 import { PayComponent } from './pay.component';
 
 import { PayProductsComponent } from './components/products/products.component';
-import { GratuityComponent } from './components/gratuity/gratuity.component';
-import { IVAComponent } from './components/iva/iva.component';
-import { TotalComponent } from './components/total/total.component';
-import { PerPersonComponent } from './components/per-person/per-person.component';
-import { PaymentMethodComponent } from './components/payment-method/payment-method.component';
-import { ButtonsComponent } from './components/buttons/buttons.component';
-import { SplitAccountComponent } from './components/split-account/split-account.component';
+
 import { ShortcutModule } from '@components/shortcut/shortcut.module';
+import { PayMethodComponent } from './components/pay-method/pay-method.component';
 
 
 
@@ -20,13 +15,7 @@ import { ShortcutModule } from '@components/shortcut/shortcut.module';
   declarations: [
     PayComponent,
     PayProductsComponent,
-    GratuityComponent,
-    IVAComponent,
-    TotalComponent,
-    PerPersonComponent,
-    PaymentMethodComponent,
-    ButtonsComponent,
-    SplitAccountComponent,
+    PayMethodComponent,
   ],
   imports: [
     CommonModule,
