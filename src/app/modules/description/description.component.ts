@@ -59,11 +59,11 @@ export class DescriptionComponent implements OnInit {
   breadcrumbs: Breadcrumb[] = [
     {
       name:'',
-      url:'/shop',
+      url:'',
     },
     {
       name:'',
-      url:'/shop',
+      url:'#',
     },
   ];
 
