@@ -25,7 +25,7 @@ export class CardComponent implements OnInit {
   }
 
   goCategory( category: Categories ): void {
-      this.router.navigateByUrl(`${category.name}`.toLowerCase());
+      this.router.navigateByUrl(`${category._id}`.toLowerCase());
   }
 
   color(category:Categories):string{

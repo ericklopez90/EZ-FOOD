@@ -1,7 +1,7 @@
 import { Subcategories } from "./subcategories.interface";
 
 export interface Categories {
-    id?: number,
+    _id?: number,
     name: string,
     image: string,
     bgColor: string,

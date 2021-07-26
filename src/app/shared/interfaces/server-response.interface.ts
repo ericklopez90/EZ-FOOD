@@ -1,5 +1,5 @@
 export interface ServerResponse {
-    payload:  Payload[];
+    payload:  any[];
     response: Response;
     meta:     Meta;
 }
