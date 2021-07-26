@@ -15,7 +15,7 @@ export class MealComponent implements OnInit {
   products: Product[] = [
     {
       id: 1,
-      category: 'postres',
+      category: 'cenas',
       name: 'Browie de chocolate',
       price: 174,
       description: 'Dulce de azúcar sin harina, postre de pastel de chocolate, azúcar moreno empacado, comida, horneando',
@@ -41,7 +41,7 @@ export class MealComponent implements OnInit {
     },
     {
       id: 3,
-      category: 'ensaladas',
+      category: 'desayunos',
       name: 'Ensalada de carambola',
       price: 125,
       description: ' La ensalada que os presentamos hoy tiene como ingrediente principal la carambola. Esta fruta, también conocida como “fruta estrella”, de entre 7 y 12 centímetros de longitud, es originaria de Indonesia y Malasia, aunque su cultivo se ha extendido a países de Asia y América',

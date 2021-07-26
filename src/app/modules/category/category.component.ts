@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { CategoriesService } from '@services/categories.service';
+import { Categories } from '@interfaces/categories.interface';
+
 
 @Component({
   selector: 'app-category',
@@ -8,15 +10,23 @@ import { Router } from '@angular/router';
 })
 export class CategoryComponent implements OnInit {
 
+  categories: Categories[] = []
+
   constructor(
-    private router: Router
+    private categoriesServices: CategoriesService
   ) { }
 
   ngOnInit(): void {
+    this.getCategorys()
   }
 
-  goCategory( category: string ): void {
-    this.router.navigateByUrl(`meal/${category}`);
+  getCategorys(){
+    this.categoriesServices.getCategories()
+    .subscribe(resp => {
+     this.categories = resp.payload
+      console.log(resp.payload)
+    })
+
   }
 
 }

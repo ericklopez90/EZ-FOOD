@@ -7,5 +7,6 @@ export interface Product {
   description: string;
   ingredients: Ingredient[];
   category?: string;
+  subcategories?: string;
   id?: string | number;
 }

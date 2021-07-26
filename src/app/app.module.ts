@@ -9,6 +9,7 @@ import { StoreModule } from '@ngrx/store';
 import { appReducers } from '@inner-store/app.reducers';
 import { StoreDevtoolsModule, StoreDevtoolsOptions } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { HttpClientModule } from '@angular/common/http';
 
 const storeDevTools: StoreDevtoolsOptions = {
   maxAge: 25,
@@ -26,6 +27,7 @@ const storeDevTools: StoreDevtoolsOptions = {
     StoreDevtoolsModule.instrument( storeDevTools ),
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
+    HttpClientModule
 
   ],
   providers: [],
