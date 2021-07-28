@@ -8,6 +8,7 @@ import { PayProductsComponent } from './components/products/products.component';
 
 import { ShortcutModule } from '@components/shortcut/shortcut.module';
 import { PayMethodComponent } from './components/pay-method/pay-method.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -20,7 +21,8 @@ import { PayMethodComponent } from './components/pay-method/pay-method.component
   imports: [
     CommonModule,
     PayRoutingModule,
-    ShortcutModule
+    ShortcutModule,
+    ReactiveFormsModule
   ]
 })
 export class PayModule { }

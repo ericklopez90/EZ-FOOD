@@ -12,7 +12,6 @@ import { Store } from '@ngrx/store';
 export class PayComponent {
 
   orders: ProductInOrder[] = [];
-
   breadcrumbs: Breadcrumb[] = [
     {
       name:'Orden',
@@ -33,6 +32,13 @@ export class PayComponent {
     this.store.select('orderState').subscribe(
       ({ order }) => this.orders = order.productsInOrder
     )
+  }
+
+  getTotal(): number {
+    return this.orders.reduce(
+      ( prev, curr) =>
+      prev + (curr.product.price * curr.quantity),
+      0 ) || 0;
   }
 }
 

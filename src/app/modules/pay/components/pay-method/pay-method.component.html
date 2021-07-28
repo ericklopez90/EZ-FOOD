@@ -1,59 +1,53 @@
 <div class="row mx-0 mt-3">
     <div class="col-7">
-      <select class="custom-select" id="inputGroupSelect01">
-        <option selected>Propina</option>
-        <option value="1">10%</option>
-        <option value="2">15%</option>
-        <option value="3">20%</option>
+      <select class="custom-select" [formControl]="tip">
+        <option value="0" selected>Propina</option>
+        <option value="10">10%</option>
+        <option value="15">15%</option>
+        <option value="20">20%</option>
       </select>
     </div>
     <div class="col-5 text-right">
-      <span>$30</span>
+      <span>{{getTip() | currency}}</span>
     </div>
   </div>
-  
+
   <hr class="my-2">
-  
+
   <div class="row mx-0 mt-3">
     <div class="col-6">
       <span>IVA</span>
     </div>
     <div class="col-6 text-right">
-      <span>$48</span>
+      <span>{{ getIva() | currency }}</span>
     </div>
   </div>
   <hr class="my-2">
-  
+
   <div class="row mx-0 mt-3">
     <div class="col-6">
       <span>Total a pagar</span>
     </div>
     <div class="col-6 text-right">
-      <span>$64</span>
+      <span>{{ totalPay() | currency }}</span>
     </div>
   </div>
   <hr class="my-2">
-  
+
   <div class="row mx-0 mt-3">
     <div class="col-6">
       <p class="m-0">Total a pagar</p>
-      <span>-Betoño</span>
+      <span>-Alberto</span>
     </div>
     <div class="col-6 text-right">
-      <span>$189</span>
+      <span>{{ totalPay() | currency }}</span>
     </div>
   </div>
-  
-  
-  <div class="row">
-    <div class="col-8 offset-2 text-center">
-        <button type="button" class="btn btn-outline-primary w-100">Pagar</button>
-    </div>
-  </div>
-  
+
+
   <div class="row my-3">
     <div class="col-10 offset-1 text-center">
-  
+
       <div id="accordion">
         <div class="card">
           <div class="card-header pay-card" id="headingOne">
@@ -119,5 +113,11 @@
       </div>
     </div>
   </div>
-  
+
+  <div class="row">
+    <div class="col-8 offset-2 text-center">
+        <button type="button" class="btn btn-outline-primary w-100">Pagar</button>
+    </div>
+  </div>
+
   <hr class="my-2">
