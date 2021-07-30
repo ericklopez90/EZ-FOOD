@@ -37,9 +37,7 @@ export class SubcategoriesService {
     this.endpointRoute = this.serviceUtil.createRoute('dispatch-sub-categories');
   }
 
-  getSubcategories(): Observable<ServerResponse>{
-    const url = `${this.endpointRoute}/`
-
-    return this.http.get<ServerResponse>(url)
+  fetchOne( id:string ): Observable<any> {
+    return this.http.get( `${this.endpointRoute}/${id}` );
   }
 }

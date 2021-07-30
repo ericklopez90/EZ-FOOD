@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CategoriesService } from '@services/categories.service';
 import { Categories } from '@interfaces/categories.interface';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -8,9 +9,10 @@ import { Categories } from '@interfaces/categories.interface';
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.css']
 })
-export class CategoryComponent implements OnInit {
+export class CategoryComponent implements OnInit, OnDestroy {
 
   categories: Categories[] = []
+  subs: Subscription[] = []
 
   constructor(
     private categoriesServices: CategoriesService
@@ -20,13 +22,16 @@ export class CategoryComponent implements OnInit {
     this.getCategorys()
   }
 
-  getCategorys(){
-    this.categoriesServices.getCategories()
+  ngOnDestroy():void{
+    this.subs.map(s => s.unsubscribe())
+  }
+
+  getCategorys():void{
+    const s = this.categoriesServices.getCategories()
     .subscribe(resp => {
      this.categories = resp.payload
-      console.log(resp.payload)
+      this.subs.push(s)
     })
-
   }
 
 }
