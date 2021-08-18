@@ -11,7 +11,7 @@ import { CategoriesService } from '@services/categories.service';
 })
 export class CardComponent implements OnInit {
 
-  @Input() categories: Categories [] = []
+  @Input() category: Categories
 
   get colors(){
     return this.categoriesService.colors
@@ -28,7 +28,7 @@ export class CardComponent implements OnInit {
       this.router.navigateByUrl(`${category._id}`.toLowerCase());
   }
 
-  color(category:Categories):string{
-    return this.colors.includes(category.bgColor)? 'text-dark':'text-white';
+  getBackgroudImage(url:string):string{
+    return `url('http://localhost:9000/${url}')`;
   }
 }

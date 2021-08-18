@@ -5,5 +5,7 @@ export interface Categories {
     name: string,
     image: string,
     bgColor: string,
+    fontColor: string,
+    imageAsBackground: boolean,
     subcategories?: Subcategories[]
 }

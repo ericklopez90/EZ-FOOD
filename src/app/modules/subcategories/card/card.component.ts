@@ -11,12 +11,15 @@ import { Subcategories } from '@interfaces/subcategories.interface';
 })
 export class CardComponent implements OnInit {
 
-  @Input() subcategories: Subcategories[] = []
+  @Input() subcategory: Subcategories
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  getBackgroudImage(url:string):string{
+    return `url('http://localhost:9000/${url}')`;
+  }
 
 }

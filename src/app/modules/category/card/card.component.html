@@ -1,12 +1,16 @@
-<ng-container *ngFor="let category of categories">
-  <div class="col-12 my-2 category-wrapper" (click)="goCategory(category)">
-    <div class="row align-items-center h-100 " [style]="'background-color:'+category.bgColor">
-      <div class="col-5">
-        <span class="fs-5 fw-bold5" [class]="color(category)">{{category.name}}</span>
-      </div>
-      <div class="col-7">
-        <img class="d-block img-category mx-auto" [src]="'http://localhost:9000/' + category.image" alt="Image">
-      </div>
-    </div>
+
+<div *ngIf="!category.imageAsBackground" class="row align-items-center my-2 h-100 rounded border cover" (click)="goCategory(category)"
+  [style.backgroundColor]="category.bgColor">
+  <div class="col-5">
+    <p class="fs-15 text-center" [style.color]="category.fontColor">
+      {{ category.name }}
+    </p>
   </div>
-</ng-container>
+  <div class="col-7 p-0 px-2">
+    <img *ngIf="category.image" class="d-block img-category mx-auto" [src]="'http://localhost:9000/'+category.image">
+  </div>
+</div>
+
+<div *ngIf="category.imageAsBackground"  class="row align-items-center my-2 h-100 rounded border cover" (click)="goCategory(category)"
+  [style.backgroundImage]="getBackgroudImage(category.image)" >
+</div>

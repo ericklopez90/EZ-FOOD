@@ -1,15 +1,16 @@
-<ng-container *ngFor="let subcategory of subcategories">
-  <div class="col-12 my-2 category-wrapper">
-    <div class="row align-items-center h-100" [style]="'background-color:'+ subcategory.bgColor" >
-      <div class="col-5">
-     <span class="fs-5 fw-bold5" >{{subcategory.name}}</span>
-      </div>
-      <div class="col-7">
-        <img class="d-block img-category mx-auto" [src]="subcategory.image" alt="Image">
-      </div>
-    </div>
+<div *ngIf="!subcategory.imageAsBackground" class="row align-items-center my-2 h-100 rounded border cover"
+  [style.backgroundColor]="subcategory.bgColor">
+  <div class="col-5">
+    <p class="fs-15 text-center" [style.color]="subcategory.fontColor">
+      {{ subcategory.name }}
+    </p>
   </div>
-</ng-container>
-<!--
-[class]="color(subcategory)"
--->
+  <div class="col-7 p-0 px-2">
+    <img *ngIf="subcategory.image" class="d-block img-category mx-auto"
+      [src]="'http://localhost:9000/'+subcategory.image">
+  </div>
+</div>
+
+<div *ngIf="subcategory.imageAsBackground" class="row align-items-center my-2 h-100 rounded border cover"
+  [style.backgroundImage]="getBackgroudImage(subcategory.image)">
+</div>

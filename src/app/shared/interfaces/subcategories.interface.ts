@@ -1,6 +1,8 @@
 export interface Subcategories {
-    _id: number,
+    _id?: number,
     name: string,
     image: string,
-    bgColor: string;
+    bgColor: string,
+    fontColor: string,
+    imageAsBackground: boolean,
 }
