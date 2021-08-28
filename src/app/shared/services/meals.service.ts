@@ -3,20 +3,21 @@ import { Injectable } from '@angular/core';
 import { ServiceUtil } from '@utils/classes/service.class';
 import { Observable } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root'
 })
-export class SubcategoriesService {
+export class MealsService {
 
   serviceUtil: ServiceUtil;
   endpointRoute: string;
 
   constructor(private http: HttpClient) { 
     this.serviceUtil = new ServiceUtil();
-    this.endpointRoute = this.serviceUtil.createRoute('dispatch-sub-categories');
+    this.endpointRoute = this.serviceUtil.createRoute('dispatch-meals');
   }
 
-  fetchOne( id:string ): Observable<any> {
+  fetch(id:string): Observable<any> {
     return this.http.get( `${this.endpointRoute}/${id}` );
   }
 }

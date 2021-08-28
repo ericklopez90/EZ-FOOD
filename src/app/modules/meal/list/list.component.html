@@ -1,14 +1,14 @@
 <div class="row">
     <div class="col-lg-9 order-lg-2">
       <div class="product-card product-list mb-30">
-        <a class="product-thumb" [routerLink]="['/meal/description/' + product.id]">
-          <img [src]="product.image" [alt]="product.name" class="imagen-produc">
+        <a class="product-thumb" [routerLink]="['/meal/description/' + product._id]">
+          <img [src]="'http://localhost:9000/'+product.image" [alt]="product.name" class="imagen-produc">
         </a>
         <div class="product-card-inner">
           <div class="product-card-body">
             <div class="product-category"></div>
             <span class="product-title">
-              <a [routerLink]="['/meal/description/' + product.id]">
+              <a [routerLink]="['/meal/description/' + product._id]">
                 {{ product.name }}
               </a>
             </span>

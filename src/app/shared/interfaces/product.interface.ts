@@ -6,7 +6,8 @@ export interface Product {
   price: number;
   description: string;
   ingredients: Ingredient[];
-  category?: string;
-  subcategories?: string;
-  id?: string | number;
+  category: string;
+  subCategory: string;
+  _id: string | number;
+  linkName: string;
 }

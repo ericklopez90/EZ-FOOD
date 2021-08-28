@@ -37,7 +37,6 @@ export class CategoryComponent implements OnInit, OnDestroy {
     const s = this.categoriesServices.getCategories()
     .subscribe(resp => {
      this.categories = resp.payload
-     console.log(resp.payload)
     })
     this.subs.push(s)
   }
@@ -54,9 +53,5 @@ export class CategoryComponent implements OnInit, OnDestroy {
     localStorage.setItem('userName', user)
     this.modal = false
   }
-
-
-
-
 }
 

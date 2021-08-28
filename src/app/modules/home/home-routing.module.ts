@@ -28,7 +28,7 @@ const routes: Routes = [{
           .then(m => m.SubcategoriesModule)
       },
       {
-        path: 'meal/:category',
+        path: 'meal/:id',
         loadChildren: () => import('@modules/meal/meal.module')
           .then(m => m.MealModule)
       },
