@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Breadcrumb } from '@interfaces/breadcrumb.interface';
 
 @Component({
@@ -10,8 +11,15 @@ export class ShortcutComponent {
 
   @Input() breadcrumbs: Breadcrumb [] = []
 
-  constructor() { }
+  constructor(
+    private _router: Router ,
+  ) { }
 
   ngOnInit(): void {
   }
+
+  urlShort(data:string):void{
+    this._router.navigateByUrl(`/${data}`);
+  }
+
 }

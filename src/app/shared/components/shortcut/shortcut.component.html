@@ -8,9 +8,9 @@
     <ng-container *ngFor=" let breadcrumb of breadcrumbs">
       <li class="separator">&nbsp;</li>
       <li>
-        <a [routerLink]="[breadcrumb.url]" class="text-decoration-none">
-          {{breadcrumb.name | titlecase}}
-        </a>
+          <a (click)="urlShort(breadcrumb.url)" class="text-decoration-none">
+            {{breadcrumb.name | titlecase}}
+          </a>
       </li>
     </ng-container>
   </ul>
