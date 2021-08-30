@@ -67,6 +67,7 @@ export class SubcategoriesComponent implements OnInit, OnDestroy {
       .subscribe(({payload}) => {
         const shortcut = payload.filter( payload => payload._id === this.id)
         this.breadcrumbs[0].name = shortcut.map( (s:any) => s.name).toString()
+        this.breadcrumbs[0].url = 'javascript:void(0)'
         this.subs.push(s)
       })
   }

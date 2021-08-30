@@ -33,24 +33,14 @@ import {
 })
 export class MealComponent implements OnInit, OnDestroy {
 
-  subs: Subscription[] = []
-  id!: string
-  realProducts: Product[]
-
-  breadcrumbs: Breadcrumb[] = [{
-      name: '',
-      url: '#',
-    },
-    {
-      name: '',
-      url: '#',
-    },
-  ];
+  subs: Subscription[] = [];
+  id!: string;
+  realProducts: Product[];
+  bread=false;
+  breadcrumbs: Breadcrumb[] = [];
 
   constructor(
     private route: ActivatedRoute,
-    private categorie$: CategoriesService,
-    private subcategorie$: SubcategoriesService,
     private meal$: MealsService
   ) {
     this.route.params.subscribe(
@@ -72,36 +62,16 @@ export class MealComponent implements OnInit, OnDestroy {
         payload
       }) => {
         this.realProducts = payload
-        let w = this.realProducts[0].category
-        let x = this.realProducts[0].subCategory
-        if (x === this.id) {
-          this.categorie$.getCategories()
-            .subscribe(({
-              payload
-            }) => {
-              const shortcutCat = payload.filter(payload => payload._id === w)
-              this.breadcrumbs[0].name = shortcutCat.map((s: any) => s.name).toString()
-              this.breadcrumbs[0].url = shortcutCat.map((s: any) => s._id).toString()
-              this.subcategorie$.fetchOne(w)
-                .subscribe(({
-                  payload
-                }) => {
-                  const shortcutSub = payload.filter((payload: any) => payload._id === x)
-                  this.breadcrumbs[1].name = shortcutSub.map((s: any) => s.name).toString()
-                  this.breadcrumbs[1].url = shortcutSub.map((s: any) => s._id).toString()
-                })
-            })
-        } else {
-          this.categorie$.getCategories()
-            .subscribe(({
-              payload
-            }) => {
-              const shortcutCat = payload.filter(payload => payload._id === w)
-              this.breadcrumbs.pop()
-              this.breadcrumbs[0].name = shortcutCat.map((s: any) => s.name).toString()
-            })
+        let w:any = this.realProducts[0].category
+        let x:any = this.realProducts[0].subCategory
+        let z = this.realProducts[0].name
+        if(x){
+          this.breadcrumbs.push({'name':w.name, 'url':w._id})
+          this.breadcrumbs.push({'name':x.name, 'url':`meal/${x._id}`})
+        }else{
+          this.breadcrumbs.push({'name':w.name, 'url':`meal/${w._id}`})
+          this.bread = true
         }
-      })
     this.subs.push(s)
-  }
+  })}
 }

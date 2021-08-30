@@ -5,7 +5,7 @@ import { DescriptionRoutingModule } from './description-routing.module';
 import { DescriptionComponent } from './description.component';
 import { ProductComponent } from './product/product.component';
 import { ShortcutModule } from '@components/shortcut/shortcut.module';
-
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,8 @@ import { ShortcutModule } from '@components/shortcut/shortcut.module';
   imports: [
     CommonModule,
     DescriptionRoutingModule,
-    ShortcutModule
+    ShortcutModule,
+    CarouselModule
   ]
 })
 export class DescriptionModule { }

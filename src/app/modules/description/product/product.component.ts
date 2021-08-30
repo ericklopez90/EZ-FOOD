@@ -6,7 +6,7 @@ import { ProductInOrder } from '@interfaces/product-in-order.interface';
 import { Product } from '@interfaces/product.interface';
 import { Store } from '@ngrx/store';
 import { Select } from '@interfaces/select-product.interface';
-
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'product',
@@ -15,6 +15,26 @@ import { Select } from '@interfaces/select-product.interface';
 })
 export class ProductComponent  {
 
+  limit: number = 5
+  customOptions: OwlOptions = {
+    loop: true,
+    autoplay: true,
+    center: true,
+    dots: false,
+    autoHeight: true,
+    autoWidth: true,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      600: {
+        items: 1,
+      },
+      1600: {
+        items: 1,
+      },
+    }
+  }
 
   selects: Select [] = [
     { value: 1, number: 1 },

@@ -44,7 +44,7 @@ export class ProductComponent implements OnInit {
   withOutIngredients(): string {
     const ingredients = this.ordered.product.ingredients;
     const without     = ingredients
-    .filter( ing => !ing.checked )
+    .filter( ing => !ing )
     .map( ing => ing.name )
     .join(', ');
     return without;
