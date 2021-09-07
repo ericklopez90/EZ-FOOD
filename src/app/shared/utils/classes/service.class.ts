@@ -1,9 +1,10 @@
 import { HttpParams } from "@angular/common/http";
 import { KeyValue } from "@interfaces/KeyValue.interface";
+import { environment } from "../../../../environments/environment";
 
 export class ServiceUtil {
 
-  private url = 'http://localhost:9000';
+  private url = environment.url;
   constructor() {}
 
   createRoute( endpoint: string ): string {

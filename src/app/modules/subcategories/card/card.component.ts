@@ -22,7 +22,7 @@ export class CardComponent implements OnInit {
   }
 
   getBackgroudImage(url:string):string{
-    return `url('http://localhost:9000/${url}')`;
+    return `url(${url}')`;
   }
 
   goSubcategory( subcategory:Subcategories):void{

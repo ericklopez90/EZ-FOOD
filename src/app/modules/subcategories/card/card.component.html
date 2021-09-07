@@ -8,7 +8,7 @@
     </div>
     <div class="col-7 p-0 px-2">
       <img *ngIf="subcategory.image" class="d-block img-category mx-auto"
-        [src]="'http://localhost:9000/'+subcategory.image">
+        [src]="subcategory.image">
     </div>
   </div>
   <div *ngIf="subcategory.imageAsBackground" class="row align-items-center my-2 h-100 rounded border cover"

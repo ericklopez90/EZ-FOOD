@@ -37,11 +37,11 @@ export class CardComponent implements OnInit {
       }else{
         this.router.navigateByUrl(`meal/${category._id}`.toLowerCase())
       }} )
-    
+
   }
 
   getBackgroudImage(url:string):string{
-    return `url('http://localhost:9000/${url}')`;
+    return `url('${url}')`;
   }
-  
+
 }
