@@ -2,10 +2,10 @@
 <div class="page-title">
   <div class="container">
     <div class="column" *ngIf="!bread">
-      <span class="fs-3 font-weight-light">{{breadcrumbs[0].name | titlecase}}</span>
+      <span class="fs-3 font-weight-light">{{breadcrumbs[0].name || '' | titlecase}}</span>
     </div>
     <div class="column" *ngIf="bread">
-      <span class="fs-3 font-weight-light">{{breadcrumbs[breadcrumbs.length -1].name | titlecase}}</span>
+      <span class="fs-3 font-weight-light">{{breadcrumbs[breadcrumbs.length -1].name || '' | titlecase}}</span>
     </div>
     <shortcut [breadcrumbs]="breadcrumbs"></shortcut>
   </div>

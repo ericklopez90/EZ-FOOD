@@ -53,6 +53,4 @@ export class OrderComponent implements OnInit, OnDestroy {
   showSuccess() {
     this.toastr.success('Se ha enviado a cocina correctamente');
   }
-
 }
-

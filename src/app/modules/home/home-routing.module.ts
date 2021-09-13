@@ -23,7 +23,7 @@ const routes: Routes = [{
           .then(m => m.CategoryModule)
       },
       {
-        path: ':category',
+        path: 'subcategory/:category',
         loadChildren: () => import('@modules/subcategories/subcategories.module')
           .then(m => m.SubcategoriesModule)
       },

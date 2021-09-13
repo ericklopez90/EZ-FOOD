@@ -2,6 +2,19 @@
 <header class="site-header navbar-sticky">
   <!-- Topbar-->
   <div class="topbar d-flex justify-content-between">
+    <form *ngIf="search">
+      <div class="row">
+        <div class="col-12 mt-2">
+          <input class="w-100" type="text" name="search" placeholder="Marca, Modelo, Versión">
+          <button type="button" class="btn btn-success">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="topbar d-flex justify-content-between" *ngIf="!search">
     <!-- Logo-->
     <div class="site-branding d-flex justifyu-content-center">
       <a class="logo" [routerLink]="['/']">
@@ -10,7 +23,8 @@
     </div>
     <!-- Toolbar-->
     <div class="toolbar d-flex">
-      <div class="toolbar-item visible-on-mobile mobile-menu-toggle"><a>
+      <div class="toolbar-item visible-on-mobile mobile-menu-toggle">
+        <a (click)="viewSearch()">
           <div>
             <i class="icon-search"></i>
             <span class="text-label">

@@ -10,13 +10,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./category.component.css']
 })
 export class CategoryComponent implements OnInit, OnDestroy {
-
-  random = Math.floor(Math.random()*999)
   modal = true
   categories: Categories[] = []
   subs: Subscription[] = []
   formName: FormGroup = this.fb.group({
-    username: [`Comensal${this.random}`, [ Validators.required ] ],
+    username: ['', [ Validators.required ] ],
   })
   
   constructor(

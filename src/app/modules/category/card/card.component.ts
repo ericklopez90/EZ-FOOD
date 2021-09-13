@@ -20,7 +20,6 @@ export class CardComponent implements OnInit {
     return this.categoriesService.colors
   }
 
-
   constructor(
     private router: Router,
     private categoriesService:CategoriesService,
@@ -33,11 +32,10 @@ export class CardComponent implements OnInit {
     const s = this.subcategorie$.fetchOne(`${category._id}`)
     .subscribe(({ payload }) => {
       if (payload.length !== 0) {
-        this.router.navigateByUrl(`${category._id}`.toLowerCase());
+        this.router.navigateByUrl(`subcategory/${category._id}`.toLowerCase());
       }else{
         this.router.navigateByUrl(`meal/${category._id}`.toLowerCase())
       }} )
-
   }
 
   getBackgroudImage(url:string):string{
