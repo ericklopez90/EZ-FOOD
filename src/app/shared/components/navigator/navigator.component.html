@@ -1,27 +1,26 @@
-<!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
 <header class="site-header navbar-sticky">
-  <!-- Topbar-->
-  <div class="topbar d-flex justify-content-between">
-    <form *ngIf="search">
+
+  <form *ngIf="search">
+    <div class=" justify-content-between">
       <div class="row">
-        <div class="col-12 mt-2">
-          <input class="w-100" type="text" name="search" placeholder="Marca, Modelo, Versión">
-          <button type="button" class="btn btn-success">
-            <i class="bi bi-search"></i>
+        <div class="col-12 mx-2">
+          <input class="form-control display-search w-75 my-3" type="text" name="search" placeholder="Buscar ....">
+          <button type="button" class="btn btn-primary" (click)="viewSearch()">
+            <span class="material-icons d-flex align-items-center">
+              search
+            </span>
           </button>
         </div>
       </div>
-    </form>
-  </div>
+    </div>
+  </form>
 
   <div class="topbar d-flex justify-content-between" *ngIf="!search">
-    <!-- Logo-->
     <div class="site-branding d-flex justifyu-content-center">
       <a class="logo" [routerLink]="['/']">
         <img src="assets/img/shop/categories/logo.jpg">
       </a>
     </div>
-    <!-- Toolbar-->
     <div class="toolbar d-flex">
       <div class="toolbar-item visible-on-mobile mobile-menu-toggle">
         <a (click)="viewSearch()">

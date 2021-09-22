@@ -12,7 +12,7 @@ export class NavigatorComponent implements OnInit, OnDestroy {
 
   quantity = 0;
   sub: Subscription;
-  search = true;
+  search = false;
 
   constructor(
     private store: Store<AppState>

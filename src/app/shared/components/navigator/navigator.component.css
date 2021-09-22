@@ -6,3 +6,7 @@
     max-height: 60px;
     max-width: 150px;
 }
+
+.display-search{
+    display: inline;
+}
