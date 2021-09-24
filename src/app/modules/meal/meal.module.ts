@@ -5,6 +5,7 @@ import { MealRoutingModule } from './meal-routing.module';
 import { MealComponent } from './meal.component'
 import { ShortcutModule } from '@components/shortcut/shortcut.module';
 import { ListModule } from './list/list.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ListModule } from './list/list.module';
     CommonModule,
     MealRoutingModule,
     ShortcutModule,
-    ListModule
+    ListModule,
+    ReactiveFormsModule
   ]
 })
 export class MealModule { }

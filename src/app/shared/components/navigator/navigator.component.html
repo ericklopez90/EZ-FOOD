@@ -1,25 +1,20 @@
 <header class="site-header navbar-sticky">
 
-  <form *ngIf="search">
-    <div class=" justify-content-between">
-      <div class="row">
-        <div class="col-12 mx-2">
-          <input class="form-control display-search w-75 my-3" type="text" name="search" placeholder="Buscar ....">
-          <button type="button" class="btn btn-primary" (click)="viewSearch()">
-            <span class="material-icons d-flex align-items-center">
-              search
-            </span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </form>
-
-  <div class="topbar d-flex justify-content-between" *ngIf="!search">
-    <div class="site-branding d-flex justifyu-content-center">
+  <div class="topbar d-flex justify-content-between">
+    <div class="site-branding d-flex justifyu-content-center" *ngIf="!search">
       <a class="logo" [routerLink]="['/']">
         <img src="assets/img/shop/categories/logo.jpg">
       </a>
+    </div>
+    <div class="site-branding d-flex justify-content-center my-1" *ngIf="search">
+      <div class="mobile-search">
+        <form class="input-group" [formGroup]="formSearch">
+          <span class="input-group-btn">
+            <button type="submit"></button>
+          </span>
+          <input class="form-control" type="search" placeholder="Buscar ..." formControlName="name" (click)="getMeals()" >
+        </form>
+      </div>
     </div>
     <div class="toolbar d-flex">
       <div class="toolbar-item visible-on-mobile mobile-menu-toggle">
@@ -32,7 +27,7 @@
           </div>
         </a>
       </div>
-      <div class="toolbar-item">
+      <div class="toolbar-item" *ngIf="!search">
         <a [routerLink]="['/order']">
           <div>
             <span class="cart-icon">
