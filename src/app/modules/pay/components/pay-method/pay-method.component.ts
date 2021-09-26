@@ -8,8 +8,6 @@ import { ProductInOrder } from '@interfaces/product-in-order.interface';
 })
 export class PayMethodComponent implements OnInit {
 
-
-
   constructor() { }
 
   ngOnInit(): void {

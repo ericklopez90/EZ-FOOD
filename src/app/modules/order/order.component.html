@@ -2,7 +2,7 @@
 <div class="page-title">
   <div class="container">
     <div class="column">
-      <span class="fs-3 font-weight-light">{{breadcrumbs[breadcrumbs.length -1].name}}</span>
+      <span class="fs-3 font-weight-light ">{{breadcrumbs[breadcrumbs.length -1].name}}</span>
     </div>
     <shortcut [breadcrumbs]="breadcrumbs"></shortcut>
   </div>
@@ -52,7 +52,7 @@
     </button>
   </div>
   <div class="col-6">
-    <a class="btn btn-outline-secondary btn-sm button-flot" [routerLink]="['/checkout']">
+    <a class="btn btn-outline-secondary btn-sm button-flot" [routerLink]="['/checkout']" (click)="saveTotal()" >
       Pagar
     </a>
   </div>

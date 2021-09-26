@@ -2,14 +2,13 @@
 <div class="page-title">
   <div class="container">
     <div class="column">
-      <span class="fs-3 font-weight-light">{{breadcrumbs[breadcrumbs.length -1].name}}</span>
+      <span class="fs-3 font-weight-light ">{{breadcrumbs[breadcrumbs.length -1].name}}</span>
     </div>
     <shortcut [breadcrumbs]="breadcrumbs"></shortcut>
   </div>
 </div>
 
 <div class="container">
-
   <div class="row mx-0">
     <div class="col-2 text-right mt-2">
       <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
@@ -27,6 +26,42 @@
     <hr class="my-2">
   </ng-container>
 
-  <pay-method></pay-method>
+  <form [formGroup]="formCuentas" (change)="getTotal()">
+    <div class="row mx-0 mt-3">
+      <div class="col-7">
+        <select class="custom-select" formControlName="percentage" (change)="propina()">
+          <option value="0" selected>Propina</option>
+          <option value="1">10%</option>
+          <option value="2">15%</option>
+          <option value="3">20%</option>
+        </select>
+      </div>
+      <div class="col-5 text-right">
+        <span>{{formCuentas.get('totalPropina').value | currency}}</span>
+      </div>
+    </div>
+    <hr class="my-2">
 
+    <div class="row mx-0 mt-3">
+      <div class="col-6 text-secondary">
+        <span>IVA informativo</span>
+      </div>
+      <div class="col-6 text-right text-secondary">
+        <span>{{formCuentas.get('iva').value | currency}}</span>
+      </div>
+    </div>
+    <hr class="my-2">
+
+    <div class="row mx-0 mt-3">
+      <div class="col-6">
+        <span>Total a pagar</span>
+      </div>
+      <div class="col-6 text-right">
+        <span>{{formCuentas.get('totalPagar').value | currency}}</span>
+      </div>
+    </div>
+  </form>
+  <hr class="my-2">
+
+  <pay-method></pay-method>
 </div>

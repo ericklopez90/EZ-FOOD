@@ -1,14 +1,14 @@
 <div class="column">
   <ul class="breadcrumbs">
     <li>
-      <a [routerLink]="['/category']">
+      <a [routerLink]="['/category']" class="text-primary">
         Inicio
       </a>
     </li>
     <ng-container *ngFor=" let breadcrumb of breadcrumbs">
       <li class="separator">&nbsp;</li>
       <li>
-          <a (click)="urlShort(breadcrumb.url)" class="text-decoration-none">
+          <a (click)="urlShort(breadcrumb.url)" class="text-decoration-none text-primary">
             {{breadcrumb.name | titlecase}}
           </a>
       </li>

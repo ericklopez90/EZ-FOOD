@@ -50,6 +50,15 @@ export class OrderComponent implements OnInit, OnDestroy {
       0 ) || 0;
   }
 
+  saveTotal(){
+    const x = this.products.reduce(
+      ( prev, curr) =>
+      prev + (curr.product.price * curr.quantity),
+      0 ) || 0;
+    const y = x.toString()
+    localStorage.setItem('total', y)
+  }
+
   showSuccess() {
     this.toastr.success('Se ha enviado a cocina correctamente');
   }

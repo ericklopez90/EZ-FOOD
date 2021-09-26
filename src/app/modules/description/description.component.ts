@@ -5,16 +5,15 @@ import { Product } from '@interfaces/product.interface';
 import { MealsService } from '@services/meals.service';
 import { Subscription } from 'rxjs';
 
-
 @Component({
   selector: 'app-description',
   templateUrl: './description.component.html',
   styleUrls: ['./description.component.css']
 })
 export class DescriptionComponent implements OnInit {
-  subs: Subscription[] = []
+  subs: Subscription[] = [];
   id!:string;
-  realProducts: Product[] = [];
+  realProducts: Product;
   breadcrumbs: Breadcrumb[] = [];
 
   constructor( 
@@ -34,10 +33,10 @@ export class DescriptionComponent implements OnInit {
       .subscribe(({
         payload
       }) => {
-        this.realProducts = payload
-        let w:any = this.realProducts[0].category
-        let x:any = this.realProducts[0].subCategory
-        let z = this.realProducts[0].name
+        this.realProducts = payload[0]
+        let w:any = this.realProducts.category
+        let x:any = this.realProducts.subCategory
+        let z = this.realProducts.name
         if(x){
           this.breadcrumbs.push({'name':w.name, 'url':w._id})
           this.breadcrumbs.push({'name':x.name, 'url':`meal/${x._id}`})
